@@ -37,6 +37,10 @@ class Tags extends React.Component {
     });
   }
 
+  onBlur = event => {
+    this.onChangeText(event.nativeEvent.text);
+  };
+
   onChangeText = text => {
     if (text.length === 0) {
       // `onKeyPress` isn't currently supported on Android; I've placed an extra
@@ -87,6 +91,7 @@ class Tags extends React.Component {
               value={this.state.text}
               style={[styles.textInput, this.props.inputStyle]}
               onChangeText={this.onChangeText}
+              onBlur={this.onBlur}
               underlineColorAndroid="transparent"
             />
           </View>
