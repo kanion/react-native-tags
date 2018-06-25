@@ -38,6 +38,7 @@ class Tags extends React.Component {
   }
 
   onBlur = event => {
+    console.log('onblur');
     this.onChangeText(event.nativeEvent.text);
   };
 
